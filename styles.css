@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rockwell';
+    background-image: url(images/bagelback.jpg);
+}
+
+@font-face {
+    font-family: SecretMansion;
+    src: url(images/SecretMansion.ttf);
+}
+
+/* HELP SOURCE FOR NAVBAR + DROPDOWN MENU, LINES 20 - 107: 
+https://www.youtube.com/watch?v=At4B7A4GOPg */
+
+/* Navigation Bar Properties */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightcoral;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-title {
+    font-size: 40px;
+    font-family: SecretMansion;
+    margin: 1rem;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0; 
+    padding: 0;
+} 
+.navbar-links li {
+    list-style: none;
+} 
+.navbar-links a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Rockwell';
+    color: white;
+} 
+.navbar-links li:hover {
+    background-color: rgb(201, 87, 87);
+}
+
+/* Dropdown Menu Properties */
+.dropdown {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+.dropdown .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Switches dropdown between computer and mobile */
+@media (max-width: 820px) {
+    .dropdown {
+        display: flex;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-links li {
+        text-align: center;
+    }
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .info-box {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+    }
+    .footer-text {
+        display: none;
+    }
+}
+
+/* Header text for each section */
+.header {
+    font-family: SecretMansion;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+/* Welcome description */
+.welcome-box {
+    border: solid;
+    margin-top: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: white;
+    padding-bottom: 3rem;
+}
+.info-box {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 10px;
+}
+.info-box img {
+    width: 400px; 
+    height: 300px;
+    margin-bottom: 1rem;
+}
+.info-text {
+    font-size: 26px;
+    padding: 0 1em;
+}
+
+
+/* Menu sampler properites */
+.menu-box {
+    border: solid;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: white;
+    padding-bottom: 2rem;
+}
+/* HELP SOURCE FOR GRID: https://codepen.io/MattWindle/pen/perZRG */
+.menu-grid {
+    display: grid;
+    margin: 0 1rem;
+    gap: 1em;
+    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    justify-content: space-between;
+}
+.menu-grid img {
+    max-width: 320px;
+    max-height: 320px;
+    margin: auto;
+}
+.menu-descript {
+    visibility: hidden;
+    opacity: 0;
+}
+.menu-wrap:hover .menu-descript {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* Location properies */
+.location-box {
+    border: solid;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: white;
+    margin-bottom: 150px;
+}
+.location-grid {
+    display: flex;
+    justify-content: space-around;
+}
+.loc {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+}
+.loc img {
+    max-height: 325px;
+    max-width: 325px;
+    padding-bottom: 1rem;
+}
+.loc-info {
+    font-size: 20px;
+}
+
+/* Adjustments for tablet */
+@media (max-width: 1080px) {
+    .info-box {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+    }
+
+    .location-grid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 4rem;
+    }
+    .loc img {
+        max-height: 80%;
+        max-width: 80%;
+    }
+}
+
+/* Footer properties */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightcoral;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.social-media {
+    display: flex;
+}
+.social-media img {
+    height: 40px;
+    width: 40px;
+}
+.symbol {
+    padding: 0.5em 0.5em;
+}
+.footer-text {
+    margin-right: 2rem;
+    font-family: SecretMansion;
+    font-size: 20px;
+}
