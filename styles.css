@@ -1,16 +1,17 @@
-* {
-    box-sizing: border-box;
+@font-face {
+    font-family: SecretMansion;
+    src: url(images/SecretMansion.ttf);
 }
+@font-face {
+    font-family: Rockwell;
+    src: url(images/ROCK.TTF);
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Rockwell';
     background-image: url(images/bagelback.jpg);
-}
-
-@font-face {
-    font-family: SecretMansion;
-    src: url(images/SecretMansion.ttf);
 }
 
 /* HELP SOURCE FOR NAVBAR + DROPDOWN MENU, LINES 20 - 107: 
@@ -33,7 +34,6 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
     font-family: SecretMansion;
     margin: 1rem;
 }
-
 .navbar-links ul {
     display: flex;
     margin: 0; 
@@ -47,7 +47,6 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
     padding: 1rem;
     text-decoration: none;
     font-size: 20px;
-    font-family: 'Rockwell';
     color: white;
 } 
 .navbar-links li:hover {
@@ -57,13 +56,13 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
 /* Dropdown Menu Properties */
 .dropdown {
     position: absolute;
-    top: 1.5rem;
+    top: 2rem;
     right: 1rem;
     display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 20px;
+    height: 30px;
 }
 .dropdown .bar {
     height: 3px;
@@ -73,7 +72,7 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
 }
 
 /* Switches dropdown between computer and mobile */
-@media (max-width: 820px) {
+@media (max-width: 1080px) {
     .dropdown {
         display: flex;
     }
@@ -81,9 +80,13 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
         flex-direction: column;
         align-items: flex-start;
     }
+    .navbar-title {
+        font-size: 60px;
+    }
     .navbar-links {
         display: none;
         width: 100%;
+        height: 100%;
     }
     .navbar-links ul {
         flex-direction: column;
@@ -94,15 +97,6 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
     }
     .navbar-links.active {
         display: flex;
-    }
-
-    .info-box {
-        display: flex;
-        justify-content: center;
-        flex-flow: row wrap;
-    }
-    .footer-text {
-        display: none;
     }
 }
 
@@ -138,7 +132,6 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
     padding: 0 1em;
 }
 
-
 /* Menu sampler properites */
 .menu-box {
     border: solid;
@@ -154,22 +147,12 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
     gap: 1em;
     max-width: 1200px;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    justify-content: space-between;
 }
 .menu-grid img {
     max-width: 320px;
     max-height: 320px;
     margin: auto;
 }
-.menu-descript {
-    visibility: hidden;
-    opacity: 0;
-}
-.menu-wrap:hover .menu-descript {
-    visibility: visible;
-    opacity: 1;
-}
-
 
 /* Location properies */
 .location-box {
@@ -182,6 +165,7 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
 .location-grid {
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
 }
 .loc {
     display: flex;
@@ -197,29 +181,12 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
     font-size: 20px;
 }
 
-/* Adjustments for tablet */
-@media (max-width: 1080px) {
-    .info-box {
-        display: flex;
-        justify-content: center;
-        flex-flow: row wrap;
-    }
-
-    .location-grid {
-        display: grid;
-        grid-template-columns: auto;
-        margin-left: 4rem;
-    }
-    .loc img {
-        max-height: 80%;
-        max-width: 80%;
-    }
-}
-
 /* Footer properties */
 .footer {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     background-color: lightcoral;
     position: fixed;
     bottom: 0;
@@ -227,6 +194,7 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
 }
 .social-media {
     display: flex;
+    flex-direction: row;
 }
 .social-media img {
     height: 40px;
@@ -239,4 +207,43 @@ https://www.youtube.com/watch?v=At4B7A4GOPg */
     margin-right: 2rem;
     font-family: SecretMansion;
     font-size: 20px;
+    color: black;
+}
+
+/* Adjustments for tablet */
+@media (max-width: 1080px) {
+    .header {
+        font-size: 400%;
+    }
+    .info-box {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .info-box img {
+        margin-left: 2.5rem;
+        height: 80%;
+        width: 80%;
+    }
+
+    .menu-grid img {
+        max-height: 90%;
+        max-width: 90%;
+    }
+
+    .location-grid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 4rem;
+    }
+    .loc img {
+        max-height: 80%;
+        max-width: 80%;
+    }
+    .loc-info {
+        font-size: 180%;
+    }
+
+    .footer-text {
+        display: none;
+    }
 }
